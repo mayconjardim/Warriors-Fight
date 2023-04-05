@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Warriors_Fight
 {
-     class MagicWarrior : Warrior
+    class MagicWarrior : Warrior
     {
-
         int teleportChance = 0;
 
         CanTeleport teleportType = new CanTeleport();
@@ -18,8 +17,9 @@ namespace Warriors_Fight
             double attkMax = 0,
             double blockMax = 0,
             int teleportChance = 0)
+            : base(name, health, attkMax, blockMax)
         {
-           this.teleportChance = teleportChance;
+            this.teleportChance = teleportChance;
         }
 
         public override double Block()
@@ -31,11 +31,12 @@ namespace Warriors_Fight
             {
                 Console.WriteLine($"{Name} {teleportType.teleport()}");
                 return 10000;
-            } else
+            }
+            else
             {
+          
                 return base.Block();
             }
         }
-
     }
 }

@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace Warriors_Fight
 {
-     class Warrior
+    class Warrior
     {
+  
+        public string Name { get; set; } = "Warrior";
+        public double Health { get; set; } = 0;
+        public double AttkMax { get; set; } = 0;
+        public double BlockMax { get; set; } = 0;
 
-        public string Name { get; set; }
-        public double Health { get; set; }
-        public double AttkMax { get; set; }
-        public double BlockMax { get; set; }
-
+       
         Random rnd = new Random();
 
-        public Warrior(string name = "Warrior", 
+     
+        public Warrior(string name = "Warrior",
             double health = 0,
-            double attkMax = 0, 
-            double blockMax = 0
-           )
+            double attkMax = 0,
+            double blockMax = 0)
         {
             Name = name;
             Health = health;
@@ -28,11 +29,13 @@ namespace Warriors_Fight
             BlockMax = blockMax;
         }
 
-        public virtual double Attack()
+       
+        public double Attack()
         {
             return rnd.Next(1, (int)AttkMax);
         }
 
+ 
         public virtual double Block()
         {
             return rnd.Next(1, (int)BlockMax);
