@@ -43,11 +43,12 @@ namespace Warriors_Fight
             } else
             
             dmg2WarB = 0;
+
             Console.WriteLine("{0} Attacks {1} and Deals {2} Damage", warriorA.Name, warriorB.Name, dmg2WarB);
 
             Console.WriteLine("{0} Has {1} Health\n", warriorB.Name, warriorB.Health);
 
-            if (warriorB.Health > 0)
+            if (warriorB.Health <= 0)
             {
                 Console.WriteLine("{0} Has Died and {1} is Victorious\n", warriorB.Name, warriorA.Name);
                 return "Game Over";
